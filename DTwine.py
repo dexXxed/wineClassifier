@@ -27,7 +27,7 @@ xTest = wine_test
 # print("-------------------------")
 
 # Используем подход случайного леса (значение кол-ва деревьев выбрано )
-rfc = RandomForestClassifier(n_estimators=1000, max_features=0.2)
+rfc = RandomForestClassifier(n_estimators=1000, max_features=0.5)
 rfc.fit(xTrain, yTrain)
 pred_rfc = rfc.predict(xTest)
 print("Random forest classifier results: \n", pred_rfc)
