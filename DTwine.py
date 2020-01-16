@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+from sklearn import tree
 from sklearn.ensemble import RandomForestClassifier
 
 # Считываем данные из CSV файла с помощью функции read_csv
@@ -15,10 +16,9 @@ xTrain = wine_train.drop('quality', axis=1)
 yTrain = wine_train['quality']
 xTest = wine_test
 
-# from sklearn import tree
 
 # Была попытка в тесте на дереве решений (результаты хуже)
-# clfTre = tree.DecisionTreeClassifier(max_depth=7)
+# clfTre = tree.DecisionTreeClassifier(max_depth=7, random_state=12)
 # clfTre.fit(xTrain, yTrain)
 # clfTre = clfTre.predict(xTest)
 
@@ -27,15 +27,15 @@ xTest = wine_test
 # print("-------------------------")
 
 # Используем подход случайного леса (значение кол-ва деревьев выбрано )
-rfc = RandomForestClassifier(n_estimators=5000, max_features=1, min_samples_leaf=5)
+rfc = RandomForestClassifier(n_estimators=1000, max_features=0.5)
 rfc.fit(xTrain, yTrain)
 pred_rfc = rfc.predict(xTest)
 print("Random forest classifier results: \n", pred_rfc)
 
 pred_rfc = np.where(pred_rfc > 6, pred_rfc, 0)
-print(pred_rfc)
+# print(pred_rfc)
 pred_rfc = np.where(pred_rfc == 0, pred_rfc, 1)
-print(pred_rfc)
+# print(pred_rfc)
 
 
-np.savetxt("data/wine_X_result_3.txt", pred_rfc, newline="\n", delimiter=",", fmt='%d')
+np.savetxt("data/wine_X_result_4.txt", pred_rfc, newline="\n", delimiter=",", fmt='%d')
