@@ -32,7 +32,7 @@ rfc.fit(xTrain, yTrain)
 pred_rfc = rfc.predict(xTest)
 print("Random forest classifier results: \n", pred_rfc)
 
-pred_rfc = np.where(pred_rfc >= 6, pred_rfc, 0)
+pred_rfc = np.where(pred_rfc > 6, pred_rfc, 0)
 pred_rfc = np.where(pred_rfc == 0, pred_rfc, 1)
 print(pred_rfc)
 
