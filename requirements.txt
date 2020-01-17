@@ -1,3 +1,5 @@
+keras
+tensorflow
 cycler==0.10.0
 graphviz==0.13.2
 joblib==0.14.1
