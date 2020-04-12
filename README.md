@@ -1,4 +1,6 @@
 # Задача A. Качество вина
+[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/338bd78cd1044892a7bb42678149e771)](https://app.codacy.com/manual/dexXxed/wineClassifier?utm_source=github.com&utm_medium=referral&utm_content=dexXxed/wineClassifier&utm_campaign=Badge_Grade_Settings)
 
